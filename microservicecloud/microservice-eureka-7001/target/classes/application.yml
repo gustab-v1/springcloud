@@ -1,0 +1,13 @@
+server:
+  port: 7001
+spring:
+  application:
+    name: ly-registry
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:7001/eureka
+    fetch-registry: false
+    register-with-eureka: false
