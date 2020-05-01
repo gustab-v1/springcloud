@@ -1,6 +1,7 @@
 package com.atguigu.springcloud.controller;
 
 import com.atguigu.springcloud.entities.Dept;
+import com.atguigu.springcloud.service.DeptClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,18 +15,18 @@ import java.util.List;
 @RestController
 @RequestMapping("consumer")
 public class DeptController_Consumer {
-    private final String REST_URL_PREFIX = "http://dept-provider";
+
     @Autowired
-    private RestTemplate restTemplate;
+    private DeptClientService clientService;
 
     @RequestMapping("findAll")
     public List<Dept> findAll(){
-        return restTemplate.getForObject(REST_URL_PREFIX+"/dept/findAll",List.class);
+        return clientService.findAll();
     }
 
     @RequestMapping("save")
     public Dept save(Dept dept){
-        restTemplate.postForObject(REST_URL_PREFIX+"/dept/save",dept,Dept.class);
+        clientService.save(dept);
         return dept;
     }
 }

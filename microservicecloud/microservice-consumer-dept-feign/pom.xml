@@ -9,9 +9,12 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>microservice-consumer-dept-80</artifactId>
-
+    <artifactId>microservice-consumer-dept-feign</artifactId>
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.example</groupId>
             <artifactId>microservicecloud-api</artifactId>
@@ -34,4 +37,5 @@
             <artifactId>spring-cloud-starter-config</artifactId>
         </dependency>
     </dependencies>
+
 </project>
