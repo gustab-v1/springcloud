@@ -1,0 +1,44 @@
+server:
+  port: 8001
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/cloud?userSSL=false&useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&serverTimezone=GMT
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
+  application:
+    name: dept-provider-hystrix
+  jpa:
+    database: mysql
+    show-sql: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+      naming_strategy: org.hibernate.cfg.ImprovedNamingStrategy
+      naming.physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:7001/eureka, http://127.0.0.1:7002/eureka
+  instance:
+    prefer-ip-address: true  #显示ip
+    instance-id: consumer-dept-hystrix-8001  #服务名称
+feign:
+  hystrix:
+    enabled: true
+ribbon:
+  ConnectionTimeOut: 500
+  ReadTimeOut: 2000
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 3000
+info:
+  app.name: atguigu-microservicecloud
+  company.name: www.wyu.com
+  build.artifactId: ${project.artifactId}
+  build.version: ${project.version}

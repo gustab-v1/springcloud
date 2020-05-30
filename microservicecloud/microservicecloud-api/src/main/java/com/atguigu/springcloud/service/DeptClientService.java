@@ -6,7 +6,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 
-@FeignClient(value = "dept-provider")
+
+@FeignClient(value = "dept-provider-hystrix",fallbackFactory = DeptClientServiceFallback.class)
 public interface DeptClientService {
     @RequestMapping("dept/findAll")
     List<Dept> findAll();
