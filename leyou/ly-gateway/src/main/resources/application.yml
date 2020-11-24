@@ -11,10 +11,16 @@ zuul:
   prefix: /api
   routes:
     item-service: /item/**
+    search-service: /search/**
+    user-service: /user/**
+    auth-service: /auth/**
+    cart-service: /cart/**
     upload-service:
       path: /upload/**
       serviceId: upload-service
       strip-prefix: false
+  add-host-header: true
+  sensitive-headers: #覆盖头信息
 hystrix:
   command:
     default:
@@ -27,3 +33,16 @@ ribbon:
   ReadTimeout: 3500
   MaxAutoRetries: 0
   MaxAutoRetriesNextServer: 0
+
+leyou:
+  jwt:
+    pubKeyPath: C:\\tmp\\rsa\\rsa.pub # 公钥地址
+    expire: 30 # 过期时间,单位分钟
+  filter:
+    allowpaths:
+      - /api/auth
+      - /api/search
+      - /api/user/register
+      - /api/user/check
+      - /api/user/code
+      - /api/item

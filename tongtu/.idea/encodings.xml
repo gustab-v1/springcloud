@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/T-auth/T-auth-common/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/T-auth/T-auth-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/T-common/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/T-eureka/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/T-gateway/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/T-user/T-user-interface/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/T-user/T-user-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/T-user/T-user-service/src/main/resources" charset="UTF-8" />
+  </component>
+</project>

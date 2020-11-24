@@ -13,6 +13,7 @@ public class GlobalCorsConfig {
         CorsConfiguration config = new CorsConfiguration();
 
         config.addAllowedOrigin("http://manage.leyou.com");
+        config.addAllowedOrigin("http://www.leyou.com");
 
         config.setAllowCredentials(true);
 

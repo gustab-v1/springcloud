@@ -19,9 +19,17 @@ public class CategoryService {
         Category category = new Category();
         category.setParentId(pid);
         List<Category> list = categoryMapper.select(category);
-        if (CollectionUtils.isEmpty(list)){
+        if (CollectionUtils.isEmpty(list)) {
             throw new LyException(ExceptionEnum.CATEGORY_NOT_FOUND);
         }
         return list;
+    }
+
+    public List<Category> queryByIds(List<Long> ids) {
+        List<Category> categories = categoryMapper.selectByIdList(ids);
+        if (CollectionUtils.isEmpty(categories)) {
+            throw new LyException(ExceptionEnum.CATEGORY_NOT_FOUND);
+        }
+        return categories;
     }
 }
